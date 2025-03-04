@@ -61,7 +61,8 @@ function request(options) {
         'User-Agent': USER_AGENT,
         'Content-Length': Buffer.byteLength(data),
         ...options.headers
-      }
+      },
+      timeout: 5000
     }, response => {
       const body = [];
       response.on('data', chunk => body.push(chunk));
