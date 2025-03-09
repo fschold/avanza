@@ -616,8 +616,8 @@ class Avanza extends EventEmitter {
 
 
   getAccountOverview(accountId) {
-    const path = constants.paths.ACCOUNT_OVERVIEW_PATH.replace('{0}', accountId);
-    return this.call('GET', path);
+    const options = [accountId];
+    return this.call('POST', constants.paths.ACCOUNT_OVERVIEW_PATH, options);
   }
   /**
    * Get recent deals and orders.
